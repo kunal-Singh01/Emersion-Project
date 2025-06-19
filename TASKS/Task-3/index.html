@@ -8,13 +8,30 @@
 </head>
 <body>
 
-  <h2>Product Search</h2>
+  <h1>Product Search</h1>
 
-  <div class="search-container">
+  <!-- Search Section -->
+  <div class="controls">
     <input type="text" id="searchInput" placeholder="Search for products..." />
     <button onclick="searchProducts()">Search</button>
+    <select id="sortSelect" onchange="sortProducts()">
+      <option value="">Sort By</option>
+      <option value="priceAsc">Price: Low to High</option>
+      <option value="priceDesc">Price: High to Low</option>
+      <option value="ratingAsc">Rating: Low to High</option>
+      <option value="ratingDesc">Rating: High to Low</option>
+    </select>
   </div>
 
+  <!-- Filter Section -->
+  <div class="filters">
+    <input type="text" id="brandFilter" placeholder="Filter by brand" />
+    <input type="number" id="minPrice" placeholder="Min Price" />
+    <input type="number" id="maxPrice" placeholder="Max Price" />
+    <button onclick="applyFilters()">Apply Filters</button>
+  </div>
+
+  <!-- Product Display Section -->
   <div class="product-list" id="productList"></div>
 
   <script src="script.js"></script>
